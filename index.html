@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa María Juanín · tres apartamentos en Collanzo, Alto Aller</title>
+<meta name="description" content="Apartamentos turísticos Casa María Juanín, en Collanzo (Aller, Asturias): tres apartamentos en el antiguo ultramarinos de la familia, a veinte minutos de Fuentes de Invierno y San Isidro.">
+<meta property="og:title" content="Casa María Juanín · tres apartamentos en Collanzo">
+<meta property="og:description" content="Tres apartamentos en el antiguo ultramarinos de la familia, en el Alto Aller. La Panera, El Capitán y El Salao.">
+<!-- script bloqueante: clase «js», entrar siempre arriba (checklist punto 12), «sin-webgl» y el mando de maqueta. -->
+<script>
+(function (d) {
+  var h = d.documentElement;
+  h.classList.add('js');
+  window.Juanin = window.Juanin || {};
+  // al recargar, Chrome devolvía la página a media altura: se entra siempre arriba, salvo con un #ancla
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+  if (!location.hash) window.scrollTo(0, 0);
+  try { if (/[?&]sin-webgl\b/.test(location.search)) h.classList.add('sin-webgl'); } catch (e) {}
+  // MANDO DE MAQUETA (no viaja al cliente): solo con ?revision
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.has('revision')) {
+      h.classList.add('revision');
+      if (q.get('densidad') === 'sobria') h.classList.add('densidad-sobria');
+    }
+  } catch (e) {}
+})(document);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=Michroma&family=Radio+Canada:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/estilos.css?v=aeedb854">
+<link rel="stylesheet" href="css/radio.css?v=b99ee891">
+<link rel="stylesheet" href="css/plantas.css?v=b8a85ff4">
+<link rel="stylesheet" href="css/nieve.css?v=28ab8dd0">
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="marca/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="marca/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#121416">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Apartamentos Casa María Juanín",
+  "description": "Tres apartamentos turísticos de 2 llaves en el antiguo comercio de ultramarinos de la familia, en Collanzo (Aller, Asturias), rehabilitado en 2006.",
+  "image": "img/og.jpg",
+  "telephone": "+34 669 75 02 09",
+  "address": { "@type": "PostalAddress", "streetAddress": "Ctra. General 48", "postalCode": "33680", "addressLocality": "Collanzo", "addressRegion": "Asturias", "addressCountry": "ES" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 43.1231988, "longitude": -5.5630593 },
+  "checkinTime": "14:00",
+  "checkoutTime": "12:00",
+  "priceRange": "70-150 €",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Guardaesquís y calientabotas", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Jardín con barbacoa", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Wifi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Calefacción individual", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Lavandería", "value": true }
+  ],
+  "knowsLanguage": ["es"]
+}
+</script>
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ============ cabecera fija: el logotipo tipográfico, las paradas y el teléfono.
+     .cab__dial es la escala finísima de un lado a otro: su aguja (#cab-aguja) avanza con el scroll (--sintonia de 0 a 1,
+     la pone main.js en <html>). Transparente sobre la portada (noche) y con cristal oscuro al bajar (.sc).
+     Radio puede encoger su escala hacia esta aguja: html.cab-sintonizada se pone al dejar atrás la portada. ============ -->
+<header class="cab" id="cab">
+  <div class="cab__in">
+    <a class="marca" href="./" aria-label="Casa María Juanín, a la portada">
+      <span class="marca__nombre">Casa María Juanín</span>
+      <span class="marca__sub" aria-hidden="true">Apartamentos · Alto Aller</span>
+    </a>
+    <nav class="cab__nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#apartamentos">Apartamentos</a>
+      <a href="#puerto">El puerto</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+    <a class="cab__tel" href="tel:+34669750209"><span class="vh">Teléfono: </span>669 75 02 09</a>
+    <button class="cab__menu" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil"><span class="vh">Menú</span><i></i><i></i></button>
+  </div>
+  <div class="cab__dial" aria-hidden="true"><i class="cab__aguja" id="cab-aguja"></i></div>
+  <div class="menu-movil" id="menu-movil" aria-hidden="true">
+    <nav aria-label="Menú">
+      <a href="#casa"><small>Ultramarinos, La Panera y 2006</small>La casa</a>
+      <a href="#apartamentos"><small>La Panera, El Capitán, El Salao</small>Apartamentos</a>
+      <a href="#puerto"><small>Fuentes de Invierno y San Isidro</small>El puerto</a>
+      <a href="#reservar"><small>Fechas libres y precio</small>Reservar</a>
+      <a href="#llegar"><small>Ctra. General 48, Collanzo</small>Cómo llegar</a>
+    </nav>
+    <p class="menu-movil__tel"><a href="tel:+34669750209">669 75 02 09</a><a href="tel:+34985487417">985 487 417</a></p>
+  </div>
+</header>
+
+<main id="principal">
+
+  <!-- ============ 1. portada «Sintoniza el Alto Aller» (módulo Radio). El titular es el LCP y no espera a nada.
+       Respaldo: img/radio/respaldo.html (lo genera scripts/radio-construir.mjs desde data/emisoras.json: la escala quieta en la
+       emisora del día en que se construye, su lectura y la fachada a su tamaño honesto). La rejilla de #portada la pone radio.css ============ -->
+  <section id="portada" class="portada sup-noche" aria-labelledby="portada-tit">
+    <div data-modulo="radio"><!-- Respaldo de la escala (lo genera scripts/radio-construir.mjs; no se edita a mano).
+     Emisora marcada: Nieve (la del día en que se construyó). radio.js lo sustituye al montar y reaprovecha la foto. -->
+<div class="radio-escala">
+  <div class="radio-cristal">
+    <div class="radio-pista">
+      <svg class="radio-marcas" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line x1="0.00" x2="0.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="10.00" x2="10.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="20.00" x2="20.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="30.00" x2="30.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="40.00" x2="40.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="50.00" x2="50.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="60.00" x2="60.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="70.00" x2="70.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="80.00" x2="80.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="90.00" x2="90.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="100.00" x2="100.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="110.00" x2="110.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="120.00" x2="120.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="130.00" x2="130.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="140.00" x2="140.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="150.00" x2="150.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="160.00" x2="160.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="170.00" x2="170.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="180.00" x2="180.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="190.00" x2="190.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="200.00" x2="200.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="210.00" x2="210.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="220.00" x2="220.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="230.00" x2="230.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="240.00" x2="240.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="250.00" x2="250.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="260.00" x2="260.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="270.00" x2="270.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="280.00" x2="280.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="290.00" x2="290.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="300.00" x2="300.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="310.00" x2="310.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="320.00" x2="320.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="330.00" x2="330.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="340.00" x2="340.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="350.00" x2="350.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="360.00" x2="360.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="370.00" x2="370.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="380.00" x2="380.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="390.00" x2="390.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="400.00" x2="400.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="410.00" x2="410.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="420.00" x2="420.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="430.00" x2="430.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="440.00" x2="440.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="450.00" x2="450.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="460.00" x2="460.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="470.00" x2="470.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="480.00" x2="480.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="490.00" x2="490.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="500.00" x2="500.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="510.00" x2="510.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="520.00" x2="520.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="530.00" x2="530.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="540.00" x2="540.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="550.00" x2="550.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="560.00" x2="560.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="570.00" x2="570.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="580.00" x2="580.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="590.00" x2="590.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="600.00" x2="600.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="610.00" x2="610.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="620.00" x2="620.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="630.00" x2="630.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="640.00" x2="640.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="650.00" x2="650.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="660.00" x2="660.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="670.00" x2="670.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="680.00" x2="680.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="690.00" x2="690.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="700.00" x2="700.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="710.00" x2="710.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="720.00" x2="720.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="730.00" x2="730.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="740.00" x2="740.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="750.00" x2="750.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="760.00" x2="760.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="770.00" x2="770.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="780.00" x2="780.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="790.00" x2="790.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="800.00" x2="800.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="810.00" x2="810.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="820.00" x2="820.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="830.00" x2="830.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="840.00" x2="840.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="850.00" x2="850.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="860.00" x2="860.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="870.00" x2="870.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="880.00" x2="880.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="890.00" x2="890.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="900.00" x2="900.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/><line x1="910.00" x2="910.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="920.00" x2="920.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="930.00" x2="930.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="940.00" x2="940.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="950.00" x2="950.00" y1="0" y2="28" class="m1" vector-effect="non-scaling-stroke"/><line x1="960.00" x2="960.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="970.00" x2="970.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="980.00" x2="980.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="990.00" x2="990.00" y1="0" y2="16" class="m0" vector-effect="non-scaling-stroke"/><line x1="1000.00" x2="1000.00" y1="0" y2="42" class="m2" vector-effect="non-scaling-stroke"/></svg>
+      <div class="radio-numeros" aria-hidden="true"><span style="left:0.000%">88</span><span class="radio-num-impar" style="left:10.000%">90</span><span style="left:20.000%">92</span><span class="radio-num-impar" style="left:30.000%">94</span><span style="left:40.000%">96</span><span class="radio-num-impar" style="left:50.000%">98</span><span style="left:60.000%">100</span><span class="radio-num-impar" style="left:70.000%">102</span><span style="left:80.000%">104</span><span class="radio-num-impar" style="left:90.000%">106</span><span style="left:100.000%">108</span></div>
+      <ul class="radio-emisoras" aria-label="Las épocas del año en Collanzo" style="list-style:none;margin:0;padding:0">
+        <li class="radio-emisora es-hoy" style="left:14.00%"><span class="radio-lampara" aria-hidden="true"></span><span class="radio-nombre-em">Nieve</span><span class="radio-frec" aria-hidden="true">90,8</span></li>
+        <li class="radio-emisora" style="left:38.00%"><span class="radio-lampara" aria-hidden="true"></span><span class="radio-nombre-em">Rutas</span><span class="radio-frec" aria-hidden="true">95,6</span></li>
+        <li class="radio-emisora" style="left:62.00%"><span class="radio-lampara" aria-hidden="true"></span><span class="radio-nombre-em">Río</span><span class="radio-frec" aria-hidden="true">100,4</span></li>
+        <li class="radio-emisora" style="left:86.00%"><span class="radio-lampara" aria-hidden="true"></span><span class="radio-nombre-em">Berrea</span><span class="radio-frec" aria-hidden="true">105,2</span></li>
+      </ul>
+      <span class="radio-aguja" aria-hidden="true" style="left:14.00%"></span>
+    </div>
+  </div>
+</div>
+<div class="radio-lectura">
+  <p class="radio-rotulo"><span class="radio-rotulo-txt">Cuatro épocas en Collanzo</span></p>
+  <div class="radio-sintonia">
+    <p class="radio-nombre">Nieve</p>
+    <p class="radio-texto">Las pistas de Fuentes de Invierno y San Isidro. Y en casa, guardaesquís y calientabotas.</p>
+    <div class="radio-cifras"><dl class="radio-cifra-filas"><div><dt>Fuentes de Invierno</dt><dd><span class="radio-cifra-num">21</span><span class="radio-cifra-ud"> min</span></dd></div><div><dt>San Isidro</dt><dd><span class="radio-cifra-num">20</span><span class="radio-cifra-ud"> min</span></dd></div></dl><p class="radio-cifra-nota">En coche</p></div>
+  </div>
+</div>
+<figure class="radio-foto">
+  <div class="radio-marco">
+    <picture>
+      <source type="image/avif" srcset="img/fotos/fachada-480.avif 480w, img/fotos/fachada-800.avif 800w, img/fotos/fachada-1024.avif 1024w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 34vw, calc(100vw - 32px)">
+      <source type="image/webp" srcset="img/fotos/fachada-480.webp 480w, img/fotos/fachada-800.webp 800w, img/fotos/fachada-1024.webp 1024w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 34vw, calc(100vw - 32px)">
+      <img src="img/fotos/fachada-800.jpg" srcset="img/fotos/fachada-480.jpg 480w, img/fotos/fachada-800.jpg 800w, img/fotos/fachada-1024.jpg 1024w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 34vw, calc(100vw - 32px)" width="1024" height="794" alt="La casa María Juanín, con su galería acristalada azul, a pleno sol" decoding="async">
+    </picture>
+  </div>
+  <figcaption class="radio-pie-foto">La casa, en la carretera general de Collanzo.</figcaption>
+</figure></div>
+    <div class="portada-texto">
+      <h1 id="portada-tit" class="portada__tit">Tres apartamentos en el antiguo ultramarinos de la familia</h1>
+      <p class="portada__baj">En Collanzo, en el Alto Aller, a veinte minutos de Fuentes de Invierno y San Isidro.</p>
+      <div class="portada__acc">
+        <a class="btn btn--luz" href="#reservar" data-reservar>Ver fechas</a>
+        <a class="btn btn--hueco" href="tel:+34669750209"><span class="vh">Llamar al </span><span class="mono">669 75 02 09</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. La casa (marfil): la historia en una frase, la ficha en cifras, lo común con iconos propios,
+       las condiciones aparte y el trato ============ -->
+  <section id="casa" class="sec casa sup-marfil" aria-labelledby="t-casa">
+    <div class="env">
+      <h2 id="t-casa" class="sec-tit casa__tit" data-revela>La casa</h2>
+      <p class="casa__historia" data-revela>Fue el <b>comercio de ultramarinos «Casa María Juanín»</b> desde finales del siglo XIX, siempre de la misma familia; después, el <b>comedor del restaurante La Panera</b> de los abuelos, hasta finales del siglo XX; y en <b>2006</b> se rehabilitó conservando su estructura, con <b>muebles de la familia</b> restaurados artesanalmente y una <b>colección de radios antiguas</b>.</p>
+
+      <div class="ficha" role="group" aria-labelledby="t-ficha">
+        <h3 class="vh" id="t-ficha">La casa en cifras</h3>
+        <dl class="ficha__cifras sup-noche">
+          <div><dt>apartamentos</dt><dd><b class="cifra">3</b><small>La Panera, El Capitán y El Salao, uno por planta</small></dd></div>
+          <div><dt>plazas</dt><dd><b class="cifra">14</b><small>2 de ellas supletorias</small></dd></div>
+          <div><dt>llaves</dt><dd><b class="cifra">2</b><small>Apartamentos turísticos</small></dd></div>
+          <div><dt>registro</dt><dd><b class="cifra cifra--mono">AT0510</b><small>Turismo de Asturias</small></dd></div>
+        </dl>
+
+        <h3 class="ficha__h">Para los tres apartamentos</h3>
+        <ul class="comun">
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M7 28V8.5C7 6 8 4 9.5 4S12 6 12 8.5V28M5 22h9"/><path d="M18 15h5v7l4.5 2.6V28H18z"/><path d="M20 4.5c-1 1.5 1 2.6 0 4.2M24 4.5c-1 1.5 1 2.6 0 4.2"/></svg><b>Guardaesquís y calientabotas</b><span>Para dejar los esquís y tener las botas calientes por la mañana.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 14h20a10 10 0 0 1-20 0z"/><path d="M11 22.5 8 29M21 22.5l3 6.5M16 24v5"/><path d="M13 4c-1 2 1 3 0 5.5M19 4c-1 2 1 3 0 5.5"/></svg><b>Jardín con barbacoa y porche</b><span>El porche tiene hortensias y farol.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 8c4-1.4 8-.9 12 1.6 4-2.5 8-3 12-1.6v17c-4-1.4-8-.9-12 1.6-4-2.5-8-3-12-1.6z"/><path d="M16 9.6v17"/></svg><b>Rincón de lectura</b><span>Un sitio tranquilo para leer, común a la casa.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 24h23l-1-3.6C24.8 16 21.6 13 17 13H8.5"/><path d="M9 13V8.5h11"/><path d="M9 19.5h2.5M14 19.5h2.5"/></svg><b>Lavandería y plancha</b><span>Con secador, y la ropa de cama y de baño.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M12 12h7v14a2.5 2.5 0 0 1-2.5 2.5h-2A2.5 2.5 0 0 1 12 26z"/><path d="M13.5 12V8.5a2 2 0 0 1 4 0V12M12 17h3.5M12 21h3.5"/><path d="M24 11c-1 1.6 1 2.6 0 4.4M24 19c-1 1.6 1 2.6 0 4.4"/></svg><b>Cuna y calientabiberones</b><span>Y camas supletorias.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 13.5a15.5 15.5 0 0 1 22 0M9 18a9.8 9.8 0 0 1 14 0M13 22.4a4.4 4.4 0 0 1 6 0"/><path d="M16 26.2v.1"/></svg><b>Wifi</b><span>En cada apartamento, con televisión, teléfono y juegos de mesa.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 9h17v14H4zM8.5 9v14M12.5 9v14M16.5 9v14M6 23v3M19 23v3"/><circle cx="26" cy="16" r="3.4"/><path d="M26 16l1.6-2.2"/></svg><b>Calefacción individual</b><span>Cada apartamento lleva la suya.</span></li>
+          <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="9" cy="13" r="2.4"/><circle cx="13.6" cy="8.4" r="2.4"/><circle cx="19.4" cy="8.4" r="2.4"/><circle cx="24" cy="13" r="2.4"/><path d="M10.6 23.6c0-3.8 2.6-7.4 5.9-7.4s5.6 3.4 5.6 6.4c0 2.4-1.6 3.6-3.4 3.6-1.4 0-1.9-.8-2.9-.8s-1.6.8-3 .8c-1.4 0-2.2-1-2.2-2.6z"/></svg><b>Mascotas bajo petición</b><span>Avisando antes de llegar.</span></li>
+        </ul>
+
+        <dl class="ficha__cond">
+          <div><dt>Entrada</dt><dd><b class="mono">14:00</b><span>desde</span></dd></div>
+          <div><dt>Salida</dt><dd><b class="mono">12:00</b><span>hasta</span></dd></div>
+          <div><dt>Abierto</dt><dd><b>Todo el año</b></dd></div>
+        </dl>
+      </div>
+
+      <figure class="trato">
+        <div class="trato__foto"><picture data-foto="pan"><source type="image/avif" srcset="img/fotos/pan-480.avif 480w, img/fotos/pan-800.avif 800w, img/fotos/pan-1024.avif 1024w, img/fotos/pan-1280.avif 1280w" sizes="(max-width: 699px) 60vw, 300px"><source type="image/webp" srcset="img/fotos/pan-480.webp 480w, img/fotos/pan-800.webp 800w, img/fotos/pan-1024.webp 1024w, img/fotos/pan-1280.webp 1280w" sizes="(max-width: 699px) 60vw, 300px"><img src="img/fotos/pan-800.jpg" srcset="img/fotos/pan-480.jpg 480w, img/fotos/pan-800.jpg 800w, img/fotos/pan-1024.jpg 1024w, img/fotos/pan-1280.jpg 1280w" sizes="(max-width: 699px) 60vw, 300px" width="1280" height="1707" alt="Una hogaza de pan casero cortada, con la miga a la vista, sobre una rejilla" loading="lazy" decoding="async"></picture></div>
+        <blockquote class="trato__cita"><p>«La propietaria muy atenta, hasta te recibe con unos dulces.»</p></blockquote>
+        <figcaption class="trato__pie mono">Reseña en Google · La foto del pan casero es de la casa</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ solo en la versión sobria: los tres, de un vistazo (lo genera construir.mjs desde data/apartamentos.json) ============ -->
+  <section class="sec vistazo sup-marfil sup-marfil-2" id="vistazo" aria-labelledby="vistazo-tit">
+    <div class="env">
+      <h2 class="sec-tit" id="vistazo-tit">Los tres, de un vistazo</h2>
+      <div class="vistazo__marco">
+        <table class="vistazo__tabla">
+          <thead><tr><th scope="col">Apartamento</th><th scope="col">Planta</th><th scope="col">Plazas</th><th scope="col">Dormitorios</th><th scope="col">Baño</th><th scope="col">Precio orientativo por noche</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">La Panera</th><td>1.ª planta</td><td>4 a 5 personas <span class="sup">supuesto</span></td><td>2 dormitorios dobles</td><td>Baño con ducha de hidromasaje</td><td class="mono">85 € · 115 € en nieve <span class="sup">supuesto</span></td></tr>
+            <tr><th scope="row">El Capitán</th><td>2.ª planta</td><td>4 a 5 personas <span class="sup">supuesto</span></td><td>2 dormitorios dobles</td><td>Baño con ducha de hidromasaje</td><td class="mono">85 € · 115 € en nieve <span class="sup">supuesto</span></td></tr>
+            <tr><th scope="row">El Salao</th><td>3.ª planta</td><td>4 personas <span class="sup">supuesto</span></td><td>2 dormitorios dobles</td><td>Baño con ducha de hidromasaje</td><td class="mono">85 € · 115 € en nieve <span class="sup">supuesto</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. «Tres plantas, tres historias» (módulo Plantas). Respaldo: las tres fichas en rejilla, desde
+       data/apartamentos.json (lo genera construir.mjs), con una foto cada una y «Reservar este» ============ -->
+  <section id="apartamentos" class="sec apartamentos sup-marfil" aria-labelledby="t-apartamentos">
+    <div class="env">
+      <h2 id="t-apartamentos" class="sec-tit" data-revela>Tres plantas, tres historias</h2>
+      <p class="sec-cab__txt">Un apartamento por planta, cada uno con el nombre de uno de la familia. Los tres tienen dos dormitorios dobles, baño con ducha de hidromasaje y calefacción propia.</p>
+    </div>
+    <div data-modulo="plantas">
+      <div class="env plantas-respaldo">
+        <article class="planta-ficha" id="ficha-panera" aria-labelledby="ficha-panera-t">
+          <picture data-foto="panera-salon"><source type="image/avif" srcset="img/fotos/panera-salon-480.avif 480w, img/fotos/panera-salon-800.avif 800w" sizes="(max-width: 899px) 92vw, 30vw"><source type="image/webp" srcset="img/fotos/panera-salon-480.webp 480w, img/fotos/panera-salon-800.webp 800w" sizes="(max-width: 899px) 92vw, 30vw"><img src="img/fotos/panera-salon-800.jpg" srcset="img/fotos/panera-salon-480.jpg 480w, img/fotos/panera-salon-800.jpg 800w" sizes="(max-width: 899px) 92vw, 30vw" width="800" height="600" alt="Salón de La Panera: pared de piedra, sofá, mesa de comedor y la cocina al fondo" loading="lazy" decoding="async"></picture>
+          <p class="planta-ficha__planta">1.ª planta</p>
+          <h3 id="ficha-panera-t">La Panera</h3>
+          <p class="planta-ficha__historia">Por el restaurante de los abuelos, La Panera, que tenía el comedor justo en ese espacio.</p>
+          <dl>
+            <dt>Plazas</dt><dd><span data-plazas="5">4 a 5 personas</span> <span class="sup">por confirmar</span></dd>
+            <dt>Dormir</dt><dd>2 dormitorios dobles</dd>
+            <dt>Baño</dt><dd>Baño con ducha de hidromasaje</dd>
+            <dt>Lo suyo</dt><dd>El espacio donde estaba el comedor del restaurante La Panera.</dd>
+          </dl>
+          <button type="button" class="btn btn--tinta" data-reservar="panera">Reservar este</button>
+        </article>
+        <article class="planta-ficha" id="ficha-capitan" aria-labelledby="ficha-capitan-t">
+          <picture data-foto="capitan-dormitorio"><source type="image/avif" srcset="img/fotos/capitan-dormitorio-480.avif 480w, img/fotos/capitan-dormitorio-800.avif 800w" sizes="(max-width: 899px) 92vw, 30vw"><source type="image/webp" srcset="img/fotos/capitan-dormitorio-480.webp 480w, img/fotos/capitan-dormitorio-800.webp 800w" sizes="(max-width: 899px) 92vw, 30vw"><img src="img/fotos/capitan-dormitorio-800.jpg" srcset="img/fotos/capitan-dormitorio-480.jpg 480w, img/fotos/capitan-dormitorio-800.jpg 800w" sizes="(max-width: 899px) 92vw, 30vw" width="800" height="600" alt="Dormitorio de El Capitán con dos camas de forja, pared verde con flores pintadas y armario de madera" loading="lazy" decoding="async"></picture>
+          <p class="planta-ficha__planta">2.ª planta</p>
+          <h3 id="ficha-capitan-t">El Capitán</h3>
+          <p class="planta-ficha__historia">Por un antepasado, capitán del ejército, que sirvió en Cuba y Filipinas.</p>
+          <dl>
+            <dt>Plazas</dt><dd><span data-plazas="5">4 a 5 personas</span> <span class="sup">por confirmar</span></dd>
+            <dt>Dormir</dt><dd>2 dormitorios dobles</dd>
+            <dt>Baño</dt><dd>Baño con ducha de hidromasaje</dd>
+            <dt>Lo suyo</dt><dd>El retrato del capitán, colgado en una de sus paredes.</dd>
+          </dl>
+          <button type="button" class="btn btn--tinta" data-reservar="capitan">Reservar este</button>
+        </article>
+        <article class="planta-ficha" id="ficha-salao" aria-labelledby="ficha-salao-t">
+          <picture data-foto="salao-salon"><source type="image/avif" srcset="img/fotos/salao-salon-480.avif 480w, img/fotos/salao-salon-800.avif 800w" sizes="(max-width: 899px) 92vw, 30vw"><source type="image/webp" srcset="img/fotos/salao-salon-480.webp 480w, img/fotos/salao-salon-800.webp 800w" sizes="(max-width: 899px) 92vw, 30vw"><img src="img/fotos/salao-salon-800.jpg" srcset="img/fotos/salao-salon-480.jpg 480w, img/fotos/salao-salon-800.jpg 800w" sizes="(max-width: 899px) 92vw, 30vw" width="800" height="600" alt="Salón de El Salao con sofá rojo, mesa de comedor con frutero y muebles antiguos de la familia" loading="lazy" decoding="async"></picture>
+          <p class="planta-ficha__planta">3.ª planta</p>
+          <h3 id="ficha-salao-t">El Salao</h3>
+          <p class="planta-ficha__historia">Por otro antepasado, «el alma de todas las reuniones familiares».</p>
+          <dl>
+            <dt>Plazas</dt><dd><span data-plazas="4">4 personas</span> <span class="sup">por confirmar</span></dd>
+            <dt>Dormir</dt><dd>2 dormitorios dobles</dd>
+            <dt>Baño</dt><dd>Baño con ducha de hidromasaje</dd>
+            <dt>Lo suyo</dt><dd>Las vistas al valle del río Aller y a Cuérigo.</dd>
+          </dl>
+          <button type="button" class="btn btn--tinta" data-reservar="salao">Reservar este</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. el puerto, hoy (módulo Nieve, QUITABLE: si se borra esta sección y sus dos etiquetas, la página no
+       cambia nada más; el enlace «El puerto» de la cabecera se quita solo). Respaldo: la foto del monte y los minutos ============ -->
+  <section id="puerto" class="sec puerto sup-noche" aria-labelledby="t-puerto">
+    <div class="env">
+      <h2 id="t-puerto" class="sec-tit" data-revela>El puerto, hoy</h2>
+    </div>
+    <div data-modulo="nieve">
+      <div class="env puerto-respaldo">
+        <figure class="puerto-respaldo__foto">
+          <picture data-foto="monte"><source type="image/avif" srcset="img/fotos/monte-480.avif 480w, img/fotos/monte-800.avif 800w, img/fotos/monte-1024.avif 1024w, img/fotos/monte-1200.avif 1200w" sizes="(max-width: 699px) 70vw, 340px"><source type="image/webp" srcset="img/fotos/monte-480.webp 480w, img/fotos/monte-800.webp 800w, img/fotos/monte-1024.webp 1024w, img/fotos/monte-1200.webp 1200w" sizes="(max-width: 699px) 70vw, 340px"><img src="img/fotos/monte-800.jpg" srcset="img/fotos/monte-480.jpg 480w, img/fotos/monte-800.jpg 800w, img/fotos/monte-1024.jpg 1024w, img/fotos/monte-1200.jpg 1200w" sizes="(max-width: 699px) 70vw, 340px" width="1200" height="2126" alt="El monte del Alto Aller al amanecer: la sierra con las crestas iluminadas y la ladera verde" loading="lazy" decoding="async"></picture>
+        </figure>
+        <div class="puerto-respaldo__txt">
+          <p class="puerto-respaldo__frase">Las dos estaciones de esquí del puerto de San Isidro quedan a un paso de casa.</p>
+          <ul class="minutos">
+            <li><b>21<small>min</small></b><span>a Fuentes de Invierno · 19,7 km</span></li>
+            <li><b>20<small>min</small></b><span>a la estación de San Isidro · 20,7 km</span></li>
+          </ul>
+          <p class="puerto__fuente mono">Tiempos y kilómetros por carretera desde la casa: OSRM sobre datos de OpenStreetMap (© colaboradores de OpenStreetMap), 24 de noviembre de 2026. Sin tráfico, nieve ni cadenas: orientativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. reservar (DEMOSTRACIÓN, js/reserva.js): tres apartamentos. Eliges apartamento (o «el que esté libre»),
+     personas y noches; el resumen es una escala de 12 meses SINTONIZADA: las noches elegidas son un tramo iluminado y la
+     temporada de la nieve se lee en ella. Escucha «juanin:apartamento» (Plantas) y expone Juanin.reservar(id?) ============ -->
+<section class="sec reservar sup-marfil" id="reservar" aria-labelledby="reservar-tit">
+  <div class="env">
+    <header class="sec-cab">
+      <h2 id="reservar-tit" class="sec-tit" data-revela>Elige apartamento y noches</h2>
+      <p class="sec-cab__txt">Mira qué noches están libres en cada uno y cuánto saldría. Para dos noches o más.</p>
+    </header>
+    <p class="demo" role="note"><b>Demostración.</b> Así funcionaría la reserva directa: las noches ocupadas son de ejemplo y los precios, supuestos. No se envía ni se guarda nada.</p>
+    <div class="motor" id="motor">
+      <noscript><p class="motor__sin">Para reservar, llama al <a href="tel:+34669750209">669 75 02 09</a> o al <a href="tel:+34985487417">985 487 417</a>.</p></noscript>
+    </div>
+    <div class="reservar__pie">
+      <section class="saber" aria-labelledby="real-tit">
+        <h3 id="real-tit">Reserva real</h3>
+        <p>Hoy se reserva por teléfono: llama al <a class="enlace" href="tel:+34669750209">669 75 02 09</a> o al <a class="enlace" href="tel:+34985487417">985 487 417</a>.</p>
+      </section>
+      <section class="saber" aria-labelledby="supuestos-tit">
+        <h3 id="supuestos-tit">Supuestos de la demostración</h3>
+        <ul class="saber__lista">
+          <li><b class="mono">Precio</b>85 € la noche por apartamento y 115 € en temporada alta, la de la nieve (del 26 de noviembre a fin de Semana Santa). Nochevieja, 150 €. Sale de su tarifa de 2021, dentro de la horquilla oficial de 70 a 150 €. <span class="sup">supuesto</span></li>
+          <li><b class="mono">Cama supletoria</b>12 € la noche, a partir de la quinta persona. <span class="sup">supuesto</span></li>
+          <li><b class="mono">Mínimo</b>Dos noches. <span class="sup">supuesto</span></li>
+          <li><b class="mono">Plazas</b>Turismo Asturias da dos apartamentos de 4 a 5 personas y uno de 4: aquí el de 4 es El Salao. <span class="sup">supuesto</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+  <!-- ============ 6. opiniones: una franja con las notas, su fuente y su fecha, y tres frases cortas de Google tal cual ============ -->
+  <section id="opiniones" class="opiniones sup-noche" aria-labelledby="t-opiniones">
+    <div class="env opiniones__in">
+      <h2 id="t-opiniones" class="vh">Opiniones</h2>
+      <ul class="notas">
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Apartamentos%20Casa%20Mar%C3%ADa%20Juan%C3%ADn%20Collanzo" rel="noopener" target="_blank"><b class="cifra">4,9</b><span>de 5 en Google<i class="mono">56 reseñas</i></span></a></li>
+        <li><a href="https://www.booking.com/searchresults.es.html?ss=Casa%20Mar%C3%ADa%20Juan%C3%ADn%20Collanzo" rel="noopener" target="_blank"><b class="cifra">9,6</b><span>de 10 en Booking<i class="mono">66 comentarios</i></span></a></li>
+      </ul>
+      <ul class="frases">
+        <li><q>Lugar encantador y la dueña muy amable, muy agradecida por el trato recibido.</q></li>
+        <li><q>Excelente atención por parte de los propietarios, muy atentos en todo momento.</q></li>
+      </ul>
+      <p class="opiniones__fuente mono">Notas de Google y Booking a 24 de noviembre de 2026. Frases de la ficha de Google.</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. cómo llegar y contacto (marfil) ============ -->
+  <section id="llegar" class="sec llegar sup-marfil" aria-labelledby="t-llegar">
+    <div class="env">
+      <h2 id="t-llegar" class="sec-tit" data-revela>Cómo llegar</h2>
+      <div class="llegar__rejilla">
+        <div class="llegar__dir">
+          <address>
+            <b>Apartamentos Casa María Juanín</b><br>
+            Ctra. General 48<br>
+            33680 Collanzo (Aller), Asturias
+          </address>
+          <p class="llegar__tels"><a class="btn btn--tinta" href="tel:+34669750209">Llamar al <span class="mono">669 75 02 09</span></a><a class="enlace mono" href="tel:+34985487417">985 487 417</a></p>
+          <dl class="llegar__vias">
+            <div><dt>Desde Oviedo y Gijón</dt><dd>Por la A-66 hasta la salida 97 (Ujo-Moreda) y después unos 20 km por la AS-112, hacia Moreda y el puerto de San Isidro.</dd></div>
+            <div><dt>Desde León y la meseta</dt><dd>Por el puerto de San Isidro (AS-253), bajando hacia Collanzo.</dd></div>
+            <div><dt>En tren o autobús</dt><dd>Hay tren (Feve) y autobús (Alsa) a Oviedo y Gijón, y transporte público a menos de 500 metros de la casa.</dd></div>
+          </dl>
+        </div>
+        <div class="llegar__der">
+          <ul class="distancias"><li><b>Fuentes de Invierno</b><span>21 min · 19,7 km</span></li><li><b>Estación de San Isidro</b><span>20 min · 20,7 km</span></li><li><b>Mieres</b><span>29 min · 29,3 km</span></li><li><b>Oviedo</b><span>42 min · 47,2 km</span></li><li><b>Gijón</b><span>55 min · 68,2 km</span></li><li><b>Aeropuerto de Asturias</b><span>1 h 11 min · 94,2 km</span></li><li><b>León</b><span>1 h 38 min · 122,9 km</span></li></ul>
+          <p class="distancias__fuente mono">Tiempos y kilómetros por carretera desde la casa: OSRM sobre datos de OpenStreetMap (© colaboradores de OpenStreetMap), 24 de noviembre de 2026. Sin tráfico, nieve ni cadenas: orientativos.</p>
+          <div class="mapa" id="mapa">
+            <div class="map-consent" id="mapa-consent">
+              <p>El mapa es de Google y, al cargarlo, Google puede guardar cookies en tu navegador.</p>
+              <button type="button" class="btn btn--tinta" id="mapa-btn">Ver el mapa</button>
+              <p class="map-consent__coord mono">43,1232 N · 5,5631 O</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ pie (noche): nombre, dirección, teléfonos, registro y legales. Sin firma de agencia.
+     [data-modulo="radio-pie"] es la escala pequeña que se completa (§5 bis): la aguja recorre las cuatro emisoras y las deja
+     encendidas al entrar en pantalla. La pinta Radio; si no está, el pie va sin ella. ============ -->
+<footer class="pie sup-noche" id="pie">
+  <div class="env">
+    <div class="pie__escala" data-modulo="radio-pie" aria-hidden="true"></div>
+    <div class="pie__arriba">
+      <p class="pie__nombre">Casa María Juanín</p>
+      <p class="pie__lema">Tres apartamentos en el antiguo ultramarinos de la familia, en Collanzo.</p>
+      <p><a class="btn btn--luz" href="#reservar" data-reservar>Ver fechas</a></p>
+    </div>
+    <div class="pie__cols">
+      <div>
+        <h2 class="pie__h">Dónde</h2>
+        <p>Ctra. General 48<br>33680 Collanzo (Aller)<br>Asturias</p>
+        <p><a href="#llegar">Cómo llegar</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">Reservas</h2>
+        <p><a href="tel:+34669750209" class="mono">669 75 02 09</a><br><a href="tel:+34985487417" class="mono">985 487 417</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">La casa</h2>
+        <p>Apartamentos turísticos<br><span class="pie__llaves">2 llaves</span> · Registro <span class="mono">AT0510</span></p>
+      </div>
+      <figure class="pie__logo">
+        <img src="marca/logo-original.png" width="195" height="84" alt="El logo de siempre de la casa: la fachada dibujada y «casa maría juanín» con dos llaves" loading="lazy" decoding="async">
+        <figcaption>Su marca de siempre</figcaption>
+      </figure>
+    </div>
+    <div class="pie__legal">
+      <nav aria-label="Legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="accesibilidad.html">Accesibilidad</a><button type="button" id="abrir-cookies">Preferencias de cookies</button></nav>
+      <p>© <span id="anno">2026</span> Apartamentos Casa María Juanín · Collanzo, Aller</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Sin cookies de análisis ni de publicidad: solo se guarda que has visto este aviso. Las letras vienen de Google Fonts; el mapa de Google solo se carga si lo pides. <a href="cookies.html">Más información</a></p>
+  <div class="cookies__acc">
+    <button class="btn btn--luz" type="button" id="ck-si">Entendido</button>
+    <button class="btn btn--hueco" type="button" id="ck-no">Solo lo necesario</button>
+  </div>
+</div>
+
+<!-- MANDO DE MAQUETA (no viaja al cliente): solo con ?revision -->
+<div class="mando" id="mando" role="group" aria-label="Dos versiones de la misma web" hidden>
+  <span class="mando__eti">Versión</span>
+  <button type="button" data-densidad="sintonia" aria-pressed="true">Sintonía</button>
+  <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+</div>
+<!-- fin del MANDO DE MAQUETA -->
+
+<!-- el foco del teclado: un subrayado ámbar de 2 px con una muesca, como la marca de la escala (lo coloca main.js) -->
+<span class="foco-marca" id="foco-marca" aria-hidden="true"></span>
+
+<!-- visor de fotos: se abre por el NOMBRE de la foto, no por su puesto (Juanin.visor.abrir(lista, nombre)) -->
+<dialog class="visor" id="visor" aria-label="Foto">
+  <figure class="visor__fig">
+    <img id="visor-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" width="800" height="600">
+    <figcaption id="visor-pie"></figcaption>
+  </figure>
+  <button type="button" class="visor__btn visor__btn--ant" id="visor-ant" aria-label="Foto anterior">‹</button>
+  <button type="button" class="visor__btn visor__btn--sig" id="visor-sig" aria-label="Foto siguiente">›</button>
+  <button type="button" class="visor__cerrar" id="visor-cerrar">Cerrar</button>
+  <p class="visor__n mono" id="visor-n" aria-live="polite"></p>
+</dialog>
+
+<!-- los módulos (cada uno en su archivo; si falta alguno, construir.mjs quita su etiqueta y se queda el respaldo del HTML) -->
+<script src="js/radio.js?v=18f175f7" defer></script>
+<script src="js/plantas.js?v=0a96642f" defer></script>
+<script src="js/nieve.js?v=ce7f365d" defer></script>
+<!-- la web -->
+<script src="js/reserva.js?v=6e9680a1" defer></script>
+<script src="js/main.js?v=b0c3b1d8" defer></script>
+</body>
+</html>

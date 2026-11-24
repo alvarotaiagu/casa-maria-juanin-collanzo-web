@@ -1,0 +1,117 @@
+/* ------------------------------------------------------------------
+   Casa María Juanín · nieve.css · «El puerto, hoy»
+   La maqueta del Alto Aller sobre el cristal oscuro (--noche): un instrumento, no una postal.
+   Todo bajo [data-modulo="nieve"]. Tokens de la web con respaldo por si aún no existe estilos.css.
+   ------------------------------------------------------------------ */
+[data-modulo="nieve"] {
+  --nv-noche: var(--noche, #121416);
+  --nv-noche-2: var(--noche-2, #1A1D20);
+  --nv-ambar: var(--ambar, #F2A93B);
+  --nv-txt: var(--marfil, #F1EEE7);
+  --nv-suave: var(--niebla, #A9ADB1);
+  --nv-linea: var(--linea-noche, rgba(241, 238, 231, .14));
+  --nv-mono: var(--fuente-cifras, ui-monospace, 'SFMono-Regular', Consolas, monospace);
+  --nv-sans: var(--fuente-texto, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  --nv-radio: var(--radio, 4px);
+  display: block; position: relative;
+  background: var(--nv-noche); color: var(--nv-txt); font-family: var(--nv-sans);
+  color-scheme: dark;
+}
+[data-modulo="nieve"] [hidden] { display: none !important; }
+[data-modulo="nieve"] .nv {
+  display: grid; gap: clamp(14px, 2vw, 24px); min-width: 0;
+  /* mismo contenedor que .env de la web: sin esto, texto y botones van pegados al borde */
+  width: 100%; max-width: calc(var(--ancho, 1280px) + 2 * var(--lado, clamp(16px, 5vw, 88px)));
+  margin-inline: auto; padding-inline: var(--lado, clamp(16px, 5vw, 88px));
+}
+[data-modulo="nieve"] .nv > * { min-width: 0; }
+
+/* ---------- barra: la frase y el selector plano / 3D ---------- */
+[data-modulo="nieve"] .nv-barra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+[data-modulo="nieve"] .nv-frase { margin: 0; font: 400 clamp(1rem, 1.3vw + .6rem, 1.25rem)/1.45 var(--nv-sans); color: var(--nv-txt); max-width: 46ch; text-wrap: balance; }
+[data-modulo="nieve"] .nv-modos, [data-modulo="nieve"] .nv-hora, [data-modulo="nieve"] .nv-vistas { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- botones: rótulos de instrumento ---------- */
+[data-modulo="nieve"] .nv-b {
+  position: relative; appearance: none; min-height: 44px; padding: 0 16px;
+  font: 400 11px/1 var(--nv-mono); letter-spacing: .09em; text-transform: uppercase; white-space: nowrap;
+  color: var(--nv-txt); background: rgba(18, 20, 22, .6); border: 1px solid var(--nv-linea); border-radius: var(--nv-radio); cursor: pointer;
+  transition: border-color .2s, color .2s, background-color .2s;
+}
+[data-modulo="nieve"] .nv-b:hover { border-color: rgba(241, 238, 231, .4); }
+[data-modulo="nieve"] .nv-b[aria-pressed="true"] { color: var(--nv-ambar); border-color: var(--nv-ambar); background: rgba(242, 169, 59, .08); }
+/* el foco del teclado: subrayado ámbar de 2 px con una muesca, como la marca de la escala */
+[data-modulo="nieve"] .nv-b:focus { outline: none; }
+[data-modulo="nieve"] .nv-b:focus-visible { box-shadow: 0 2px 0 0 var(--nv-ambar); border-color: var(--nv-ambar); }
+[data-modulo="nieve"] .nv-b:focus-visible::after { content: ''; position: absolute; left: 50%; bottom: -7px; width: 2px; height: 7px; background: var(--nv-ambar); transform: translateX(-50%); }
+
+/* ---------- la maqueta: el mismo hueco para el plano y para el 3D ---------- */
+[data-modulo="nieve"] .nv-escena {
+  position: relative; overflow: hidden; aspect-ratio: 16 / 10; width: 100%;
+  background: #0c0e10; border: 1px solid var(--nv-linea); border-radius: var(--nv-radio);
+  isolation: isolate;
+}
+[data-modulo="nieve"] .nv-2d, [data-modulo="nieve"] .nv-3d { position: absolute; inset: 0; width: 100%; height: 100%; }
+[data-modulo="nieve"] .nv-3d { cursor: grab; touch-action: pan-y; }
+[data-modulo="nieve"] .nv-3d.arrastrando { cursor: grabbing; }
+[data-modulo="nieve"] .nv-carga { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 16px; text-align: center; font: 400 12px/1.4 var(--nv-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--nv-suave); }
+[data-modulo="nieve"] .nv-fps { position: absolute; left: 8px; top: 8px; margin: 0; padding: 3px 6px; font: 400 11px/1 var(--nv-mono); background: rgba(0, 0, 0, .6); color: #9fe870; }
+
+/* ---------- pines: la casa (luz ámbar) y las estaciones ---------- */
+[data-modulo="nieve"] .nv-pines { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+[data-modulo="nieve"] .nv-pin { position: absolute; left: 0; top: 0; width: 0; height: 0; display: block; will-change: transform; }
+[data-modulo="nieve"] .nv-pin__punto { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; background: var(--nv-txt); box-shadow: 0 0 0 2px rgba(18, 20, 22, .75); }
+[data-modulo="nieve"] .nv-pin.menor .nv-pin__punto { left: -3px; top: -3px; width: 6px; height: 6px; background: var(--nv-suave); }
+[data-modulo="nieve"] .nv-pin.casa .nv-pin__punto { left: -7px; top: -7px; width: 14px; height: 14px; background: var(--nv-ambar); box-shadow: 0 0 0 3px rgba(242, 169, 59, .3), 0 0 22px 4px rgba(242, 169, 59, .55); }
+[data-modulo="nieve"] .nv-pin__txt {
+  position: absolute; white-space: nowrap; padding: 4px 7px; font: 400 11px/1 var(--nv-mono); letter-spacing: .05em;
+  color: var(--nv-txt); background: rgba(18, 20, 22, .78); border-left: 2px solid var(--nv-txt);
+}
+[data-modulo="nieve"] .nv-pin.casa .nv-pin__txt { border-left-color: var(--nv-ambar); color: var(--nv-ambar); }
+[data-modulo="nieve"] .nv-pin.menor .nv-pin__txt { border-left-color: var(--nv-suave); color: var(--nv-suave); }
+[data-modulo="nieve"] .nv-pin[data-l="r"] .nv-pin__txt { left: 14px; top: -9px; }
+[data-modulo="nieve"] .nv-pin[data-l="l"] .nv-pin__txt, [data-modulo="nieve"] .nv-pin[data-l="ld"] .nv-pin__txt { right: 12px; top: -9px; border-left: 0; border-right: 2px solid currentColor; }
+[data-modulo="nieve"] .nv-pin[data-l="ld"] .nv-pin__txt { top: 7px; }
+[data-modulo="nieve"] .nv-pin[data-l="u"] .nv-pin__txt { left: 0; top: -30px; transform: translateX(-50%); }
+
+/* ---------- controles del 3D, bajo la maqueta ---------- */
+[data-modulo="nieve"] .nv-ctl { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; }
+[data-modulo="nieve"] .nv-mando { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+[data-modulo="nieve"] .nv-ayuda { margin: 0; font: 400 12px/1.4 var(--nv-sans); color: var(--nv-suave); max-width: 38ch; }
+
+/* ---------- panel: la nieve, los dos puntos del modelo y el cielo ---------- */
+[data-modulo="nieve"] .nv-panel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px clamp(20px, 3vw, 48px); padding-top: clamp(14px, 2vw, 22px); border-top: 1px solid var(--nv-linea); }
+[data-modulo="nieve"] .nv-col { display: grid; align-content: start; gap: 10px; min-width: 0; }
+[data-modulo="nieve"] .nv-eti { margin: 0; font: 400 11px/1 var(--nv-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--nv-suave); }
+[data-modulo="nieve"] .nv-hoy { margin: 0; font: 400 clamp(.95rem, .5vw + .8rem, 1.1rem)/1.45 var(--nv-mono); color: var(--nv-txt); overflow-wrap: anywhere; }
+[data-modulo="nieve"] .nv[data-nieve="ok"] .nv-hoy { color: var(--nv-ambar); }
+[data-modulo="nieve"] .nv-aviso { margin: 0; font: 400 .875rem/1.5 var(--nv-sans); color: var(--nv-suave); max-width: 42ch; }
+[data-modulo="nieve"] .nv-filas { margin: 0; display: grid; gap: 10px; }
+[data-modulo="nieve"] .nv-fila { display: grid; gap: 3px; }
+[data-modulo="nieve"] .nv-fila dt { font: 400 .875rem/1.3 var(--nv-sans); color: var(--nv-txt); }
+[data-modulo="nieve"] .nv-fila dd { margin: 0; display: flex; flex-wrap: wrap; gap: 2px 14px; font: 400 12px/1.5 var(--nv-mono); color: var(--nv-suave); }
+[data-modulo="nieve"] .nv-cifra { color: var(--nv-ambar); font-family: var(--nv-mono); font-variant-numeric: tabular-nums; }
+[data-modulo="nieve"] .nv-fila--nota dd { color: var(--nv-suave); }
+[data-modulo="nieve"] .nv-cielo__fila { display: flex; align-items: center; gap: 14px; }
+[data-modulo="nieve"] .nv-luna { flex: none; width: 44px; height: 44px; }
+[data-modulo="nieve"] .nv-cielo__txt { margin: 0; font: 400 .875rem/1.5 var(--nv-sans); color: var(--nv-txt); }
+[data-modulo="nieve"] .nv-llegar { margin: 0; font: 400 12px/1.6 var(--nv-mono); color: var(--nv-suave); }
+[data-modulo="nieve"] .nv-llegar b { font-weight: 400; color: var(--nv-txt); }
+[data-modulo="nieve"] .nv-credito { margin: 0; font: 400 12px/1.6 var(--nv-sans); color: var(--nv-suave); max-width: 90ch; }
+[data-modulo="nieve"] .nv-credito a { color: inherit; text-decoration-color: rgba(241, 238, 231, .35); text-underline-offset: 3px; }
+[data-modulo="nieve"] .nv-credito a:hover { color: var(--nv-txt); }
+
+@media (max-width: 899px) {
+  [data-modulo="nieve"] .nv-panel { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 699px) {
+  [data-modulo="nieve"] .nv-escena { aspect-ratio: 4 / 3; }
+  [data-modulo="nieve"] .nv-b { padding: 0 12px; letter-spacing: .06em; }
+  [data-modulo="nieve"] .nv-vistas { width: 100%; }
+  [data-modulo="nieve"] .nv-vistas .nv-b { flex: 1 1 calc(50% - 8px); }
+  [data-modulo="nieve"] .nv-pin__txt { font-size: 10px; padding: 3px 5px; }
+  [data-modulo="nieve"] .nv-pin.menor .nv-pin__txt { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-modulo="nieve"] .nv-b { transition: none; }
+}

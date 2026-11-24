@@ -1,0 +1,194 @@
+[
+ {
+  "nombre": "fachada",
+  "anchos": [
+   480,
+   800,
+   1024
+  ],
+  "ancho": 1024,
+  "alto": 794,
+  "origen": "../scripts/fuentes/fachada-recta.png",
+  "recorte": null
+ },
+ {
+  "nombre": "monte",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1200
+  ],
+  "ancho": 1200,
+  "alto": 2126,
+  "origen": "fotos/actual/img_20220923_073355-high.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "pan",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280
+  ],
+  "ancho": 1280,
+  "alto": 1707,
+  "origen": "fotos/actual/20230814_091014-high.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "porche",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/SALAO_06.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "panera-salon",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/PANERA_03.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "panera-dormitorio-rayas",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/PANERA_01.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "panera-dormitorio-rayas-2",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/PANERA_02.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "panera-dormitorio-dosel",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/PANERA_04.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "panera-dormitorio-dosel-2",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/PANERA_05.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "capitan-dormitorio",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/CAPITAN_01.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "capitan-detalle",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/CAPITAN_03.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "capitan-ventana",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/CAPITAN_04.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "salao-salon",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/SALAO_02.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "salao-comedor",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/SALAO_04.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "salao-cocina",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/SALAO_05.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "salao-dormitorio",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/SALAO_03.jpg",
+  "recorte": null
+ },
+ {
+  "nombre": "salao-dormitorio-dos-camas",
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "fotos/wb2011/SALAO_01.jpg",
+  "recorte": null
+ }
+]

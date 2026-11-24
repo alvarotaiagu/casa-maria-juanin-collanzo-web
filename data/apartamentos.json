@@ -1,0 +1,89 @@
+{
+  "_fuente": "ref/DATOS-CASA-MARIA-JUANIN.md (web de 2011 y Turismo Asturias), recogidos el 2026-11-24. Una sola fuente para Plantas, la reserva y la tabla de la sobria. Lo marcado con supuesto:true va a PENDIENTES.md.",
+  "casa": {
+    "nombre": "Apartamentos Casa María Juanín",
+    "categoria": "Apartamentos turísticos, 2 llaves",
+    "registro": "AT0510",
+    "plazas_total": 14,
+    "plazas_supletorias": 2,
+    "plazas_texto": "14 plazas en total, 2 de ellas supletorias (Turismo Asturias)",
+    "comun": ["Salón comedor amplio", "Cocina completa: microondas, vitrocerámica, frigorífico y menaje", "Baño con ducha de hidromasaje", "Calefacción individual", "TV y juegos de mesa", "Teléfono", "Wifi"]
+  },
+  "tarifas": {
+    "supuesto": true,
+    "nota": "Supuesto para la demostración, tomado de su tarifa de 2021 (la última publicada) y dentro de la horquilla oficial de Turismo Asturias (70 a 150 € la noche). Precio por apartamento y noche. A confirmar con la casa.",
+    "moneda": "EUR",
+    "baja": 85,
+    "alta": 115,
+    "nochevieja": 150,
+    "supletoria": 12,
+    "minimo_noches": 2,
+    "alta_desde": "11-26",
+    "alta_hasta": "fin de Semana Santa (Domingo de Resurrección)",
+    "alta_texto": "Temporada alta, la de la nieve: del 26 de noviembre a fin de Semana Santa"
+  },
+  "apartamentos": [
+    {
+      "id": "panera",
+      "letra": "P",
+      "nombre": "La Panera",
+      "planta": 1,
+      "planta_texto": "1.ª planta",
+      "historia": "Por el restaurante de los abuelos, La Panera, que tenía el comedor justo en ese espacio.",
+      "plazas": { "fijas": 4, "supletorias": 1, "max": 5, "texto": "4 a 5 personas", "supuesto": true, "nota": "Turismo Asturias da dos apartamentos de 4-5 plazas y uno de 4, sin decir cuál. Que La Panera sea de 4-5 es un supuesto." },
+      "dormitorios": { "numero": 2, "texto": "2 dormitorios dobles" },
+      "bano": "Baño con ducha de hidromasaje",
+      "calefaccion": "Calefacción individual",
+      "lo_suyo": "El espacio donde estaba el comedor del restaurante La Panera.",
+      "notas": ["Aquí estaba el comedor del restaurante de los abuelos"],
+      "fotos": [
+        { "nombre": "panera-salon", "estancia": "salon", "estancia_texto": "Salón y cocina", "alt": "Salón de La Panera: pared de piedra, sofá, mesa de comedor y la cocina al fondo", "origen": "wb2011/PANERA_03.jpg" },
+        { "nombre": "panera-dormitorio-rayas", "estancia": "dormitorio", "estancia_texto": "Dormitorio de las rayas", "alt": "Dormitorio de La Panera con dos camas, pared de rayas azules y mecedora junto a la ventana", "origen": "wb2011/PANERA_01.jpg" },
+        { "nombre": "panera-dormitorio-rayas-2", "estancia": "dormitorio", "estancia_texto": "Dormitorio de las rayas", "alt": "El mismo dormitorio desde otro ángulo, con retratos antiguos de la familia en la pared", "origen": "wb2011/PANERA_02.jpg" },
+        { "nombre": "panera-dormitorio-dosel", "estancia": "dormitorio", "estancia_texto": "Dormitorio del dosel", "alt": "Dormitorio de La Panera con dosel de tul y colchas de flores azules", "origen": "wb2011/PANERA_04.jpg" },
+        { "nombre": "panera-dormitorio-dosel-2", "estancia": "dormitorio", "estancia_texto": "Dormitorio del dosel", "alt": "El dormitorio del dosel con sus dos camas", "origen": "wb2011/PANERA_05.jpg" }
+      ]
+    },
+    {
+      "id": "capitan",
+      "letra": "C",
+      "nombre": "El Capitán",
+      "planta": 2,
+      "planta_texto": "2.ª planta",
+      "historia": "Por un antepasado, capitán del ejército, que sirvió en Cuba y Filipinas.",
+      "plazas": { "fijas": 4, "supletorias": 1, "max": 5, "texto": "4 a 5 personas", "supuesto": true, "nota": "Turismo Asturias da dos apartamentos de 4-5 plazas y uno de 4, sin decir cuál. Que El Capitán sea de 4-5 es un supuesto." },
+      "dormitorios": { "numero": 2, "texto": "2 dormitorios dobles" },
+      "bano": "Baño con ducha de hidromasaje",
+      "calefaccion": "Calefacción individual",
+      "lo_suyo": "El retrato del capitán, colgado en una de sus paredes.",
+      "notas": ["El retrato del capitán está en una de sus paredes"],
+      "fotos": [
+        { "nombre": "capitan-dormitorio", "estancia": "dormitorio", "estancia_texto": "Dormitorio", "alt": "Dormitorio de El Capitán con dos camas de forja, pared verde con flores pintadas y armario de madera", "origen": "wb2011/CAPITAN_01.jpg" },
+        { "nombre": "capitan-detalle", "estancia": "detalle", "estancia_texto": "Detalle", "alt": "Un vestido blanco antiguo colgado en la puerta del armario y un osito de peluche en la butaca", "origen": "wb2011/CAPITAN_03.jpg" },
+        { "nombre": "capitan-ventana", "estancia": "vista", "estancia_texto": "Desde la ventana", "alt": "Geranios rojos en la ventana de El Capitán y, detrás, el monte verde del valle", "origen": "wb2011/CAPITAN_04.jpg" }
+      ]
+    },
+    {
+      "id": "salao",
+      "letra": "S",
+      "nombre": "El Salao",
+      "planta": 3,
+      "planta_texto": "3.ª planta",
+      "historia": "Por otro antepasado, «el alma de todas las reuniones familiares».",
+      "plazas": { "fijas": 4, "supletorias": 0, "max": 4, "texto": "4 personas", "supuesto": true, "nota": "Turismo Asturias da uno de los tres de 4 plazas, sin decir cuál. Que sea El Salao, el de arriba, es un supuesto." },
+      "dormitorios": { "numero": 2, "texto": "2 dormitorios dobles" },
+      "bano": "Baño con ducha de hidromasaje",
+      "calefaccion": "Calefacción individual",
+      "lo_suyo": "Las vistas al valle del río Aller y a Cuérigo.",
+      "notas": ["Vistas al valle del río Aller y a Cuérigo"],
+      "fotos": [
+        { "nombre": "salao-salon", "estancia": "salon", "estancia_texto": "Salón", "alt": "Salón de El Salao con sofá rojo, mesa de comedor con frutero y muebles antiguos de la familia", "origen": "wb2011/SALAO_02.jpg" },
+        { "nombre": "salao-comedor", "estancia": "salon", "estancia_texto": "Salón", "alt": "El salón comedor de El Salao con sus ventanas de madera", "origen": "wb2011/SALAO_04.jpg" },
+        { "nombre": "salao-cocina", "estancia": "cocina", "estancia_texto": "Cocina", "alt": "Cocina de El Salao con muebles de madera y azulejos de dibujo", "origen": "wb2011/SALAO_05.jpg" },
+        { "nombre": "salao-dormitorio", "estancia": "dormitorio", "estancia_texto": "Dormitorio de matrimonio", "alt": "Dormitorio de El Salao con cama de matrimonio de forja y colcha blanca", "origen": "wb2011/SALAO_03.jpg" },
+        { "nombre": "salao-dormitorio-dos-camas", "estancia": "dormitorio", "estancia_texto": "Dormitorio de dos camas", "alt": "Dormitorio de El Salao con dos camas y cabeceros de madera", "origen": "wb2011/SALAO_01.jpg" }
+      ]
+    }
+  ],
+  "_sin_fotos": "No hay fotos del baño ni de la cocina de La Panera y El Capitán (solo las de 2011). A PENDIENTES."
+}

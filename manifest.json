@@ -1,0 +1,13 @@
+{
+  "name": "Apartamentos Casa María Juanín",
+  "short_name": "María Juanín",
+  "lang": "es",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#121416",
+  "theme_color": "#121416",
+  "icons": [
+    { "src": "marca/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "marca/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "_fuente": "ref/DATOS-CASA-MARIA-JUANIN.md (Turismo Asturias, vivirasturias y su web de 2011), recogidos el 2026-11-24. Lo escribe el agente Radio. Los textos salen de DATOS y no afirman nada más.",
+  "_meses": "Los meses de cada emisora son APROXIMADOS y solo sirven para elegir la emisora de hoy: no se enseñan como fechas. «pascua» = Domingo de Resurrección del año (la nieve llega hasta fin de Semana Santa, como su temporada alta); «pascua+1» = el lunes siguiente.",
+  "_minutos": "Los minutos a las estaciones salen de ref/raw/rutas.json (OSRM, agente Nieve): los copia scripts/radio-construir.mjs. Fuentes de Invierno 21 min y San Isidro 20 min (2026-11-24). El «15 minutos» de Turismo Asturias ya no se usa.",
+  "escala": {
+    "desde": 88,
+    "hasta": 108,
+    "paso": 0.2,
+    "medio": 1,
+    "mayor": 2,
+    "_nota": "Una escala de frecuencias como la de una radio: es el instrumento, no afirma nada. Las posiciones de las emisoras van de 0 (izquierda) a 1 (derecha), en el orden del año."
+  },
+  "emisoras": [
+    {
+      "id": "nieve",
+      "nombre": "Nieve",
+      "posicion": 0.14,
+      "capa": "copos",
+      "meses": {
+        "desde": "11-01",
+        "hasta": "pascua"
+      },
+      "texto": "Las pistas de Fuentes de Invierno y San Isidro. Y en casa, guardaesquís y calientabotas.",
+      "dato": {
+        "tipo": "minutos",
+        "destinos": [
+          {
+            "id": "fuentes",
+            "nombre": "Fuentes de Invierno",
+            "minutos": 21
+          },
+          {
+            "id": "sanisidro",
+            "nombre": "San Isidro",
+            "minutos": 20
+          }
+        ],
+        "provisional": false,
+        "fuente": "OSRM (router.project-osrm.org, perfil de coche) sobre datos de OpenStreetMap (ODbL), 2026-11-24"
+      },
+      "luz": {
+        "fondo": "#101519",
+        "ambar": "#F5BB5F"
+      },
+      "foto": null
+    },
+    {
+      "id": "rutas",
+      "nombre": "Rutas",
+      "posicion": 0.38,
+      "capa": "curvas",
+      "meses": {
+        "desde": "pascua+1",
+        "hasta": "06-20"
+      },
+      "texto": "El puerto de Cotobello, la Ruta de les Branes y el Picu Torres, a pie, en bici o a caballo.",
+      "dato": {
+        "tipo": "texto",
+        "valor": "Vía Carisa",
+        "nota": "la calzada romana"
+      },
+      "luz": {
+        "fondo": "#111513",
+        "ambar": "#F2AF46"
+      },
+      "foto": {
+        "nombre": "monte",
+        "anchos": [
+          480,
+          800,
+          1024,
+          1200
+        ],
+        "ancho": 1200,
+        "alto": 2126,
+        "alt": "El monte al amanecer",
+        "pie": "El monte, al amanecer.",
+        "posicion": "50% 38%"
+      }
+    },
+    {
+      "id": "rio",
+      "nombre": "Río",
+      "posicion": 0.62,
+      "capa": "reflejos",
+      "meses": {
+        "desde": "06-21",
+        "hasta": "09-22"
+      },
+      "texto": "Los baños en los pozos del río San Isidro, y uno de los cotos de pesca más importantes del norte.",
+      "dato": {
+        "tipo": "texto",
+        "valor": "Verano",
+        "nota": null
+      },
+      "luz": {
+        "fondo": "#0F1517",
+        "ambar": "#F2A93B"
+      },
+      "foto": null
+    },
+    {
+      "id": "berrea",
+      "nombre": "Berrea",
+      "posicion": 0.86,
+      "capa": "onda",
+      "meses": {
+        "desde": "09-23",
+        "hasta": "10-31"
+      },
+      "texto": "La berrea de los venados, en el Alto Aller.",
+      "dato": {
+        "tipo": "texto",
+        "valor": "Otoño",
+        "nota": null
+      },
+      "luz": {
+        "fondo": "#16120F",
+        "ambar": "#EE9632"
+      },
+      "foto": null
+    }
+  ],
+  "casa": {
+    "foto": {
+      "nombre": "fachada",
+      "anchos": [
+        480,
+        800,
+        1024
+      ],
+      "ancho": 1024,
+      "alto": 794,
+      "alt": "La casa María Juanín, con su galería acristalada azul, a pleno sol",
+      "pie": "La casa, en la carretera general de Collanzo."
+    }
+  }
+}

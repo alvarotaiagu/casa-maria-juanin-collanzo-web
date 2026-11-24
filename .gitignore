@@ -1,0 +1,8 @@
+# solo en local: material de origen, pruebas y notas internas
+ref/
+pruebas/
+node_modules/
+PENDIENTES.md
+ENCARGO.md
+scripts/__pycache__/
+scripts/.cache/

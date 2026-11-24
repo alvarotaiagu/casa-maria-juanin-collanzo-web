@@ -1,0 +1,19 @@
+[
+ {"nombre": "fachada", "ruta": "../scripts/fuentes/fachada-recta.png", "tipo": "ext", "maxAncho": 1024, "nota": "ta-exterior.jpg (1024×768) con las verticales enderezadas por scripts/fotos-verticales.py. Nítida a su tamaño (cociente 0,71): nunca más de 1024"},
+ {"nombre": "monte", "ruta": "fotos/actual/img_20220923_073355-high.jpg", "tipo": "ext", "verde": 0.6, "maxAncho": 1200, "nota": "el monte al amanecer, vertical 1920×3401; a 1920 es algo blanda (cociente 0,54): tope 1200"},
+ {"nombre": "pan", "ruta": "fotos/actual/20230814_091014-high.jpg", "tipo": "int", "bal": 0.25, "maxAncho": 1280, "nota": "el pan casero (1920×2560, nítido). Se usa pequeño"},
+ {"nombre": "porche", "ruta": "fotos/wb2011/SALAO_06.jpg", "tipo": "ext", "bal": 0.3, "maxAncho": 800, "nota": "el porche con hortensias y farol (2011, 800×600)"},
+ {"nombre": "panera-salon", "ruta": "fotos/wb2011/PANERA_03.jpg", "tipo": "int", "bal": 0.55, "sat": 0.9, "maxAncho": 800, "nota": "2011: amarilla"},
+ {"nombre": "panera-dormitorio-rayas", "ruta": "fotos/wb2011/PANERA_01.jpg", "tipo": "int", "bal": 0.4, "maxAncho": 800},
+ {"nombre": "panera-dormitorio-rayas-2", "ruta": "fotos/wb2011/PANERA_02.jpg", "tipo": "int", "bal": 0.4, "maxAncho": 800},
+ {"nombre": "panera-dormitorio-dosel", "ruta": "fotos/wb2011/PANERA_04.jpg", "tipo": "int", "bal": 0.4, "maxAncho": 800},
+ {"nombre": "panera-dormitorio-dosel-2", "ruta": "fotos/wb2011/PANERA_05.jpg", "tipo": "int", "bal": 0.4, "maxAncho": 800},
+ {"nombre": "capitan-dormitorio", "ruta": "fotos/wb2011/CAPITAN_01.jpg", "tipo": "int", "bal": 0.45, "maxAncho": 800},
+ {"nombre": "capitan-detalle", "ruta": "fotos/wb2011/CAPITAN_03.jpg", "tipo": "int", "bal": 0.45, "maxAncho": 800},
+ {"nombre": "capitan-ventana", "ruta": "fotos/wb2011/CAPITAN_04.jpg", "tipo": "ext", "bal": 0.3, "maxAncho": 800, "nota": "la vista desde la ventana de El Capitán"},
+ {"nombre": "salao-salon", "ruta": "fotos/wb2011/SALAO_02.jpg", "tipo": "int", "bal": 0.55, "sat": 0.9, "maxAncho": 800},
+ {"nombre": "salao-comedor", "ruta": "fotos/wb2011/SALAO_04.jpg", "tipo": "int", "bal": 0.5, "sat": 0.9, "maxAncho": 800},
+ {"nombre": "salao-cocina", "ruta": "fotos/wb2011/SALAO_05.jpg", "tipo": "int", "bal": 0.45, "maxAncho": 800},
+ {"nombre": "salao-dormitorio", "ruta": "fotos/wb2011/SALAO_03.jpg", "tipo": "int", "bal": 0.4, "maxAncho": 800},
+ {"nombre": "salao-dormitorio-dos-camas", "ruta": "fotos/wb2011/SALAO_01.jpg", "tipo": "int", "bal": 0.5, "maxAncho": 800}
+]

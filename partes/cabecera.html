@@ -1,0 +1,33 @@
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ============ cabecera fija: el logotipo tipográfico, las paradas y el teléfono.
+     .cab__dial es la escala finísima de un lado a otro: su aguja (#cab-aguja) avanza con el scroll (--sintonia de 0 a 1,
+     la pone main.js en <html>). Transparente sobre la portada (noche) y con cristal oscuro al bajar (.sc).
+     Radio puede encoger su escala hacia esta aguja: html.cab-sintonizada se pone al dejar atrás la portada. ============ -->
+<header class="cab" id="cab">
+  <div class="cab__in">
+    <a class="marca" href="./" aria-label="Casa María Juanín, a la portada">
+      <span class="marca__nombre">Casa María Juanín</span>
+      <span class="marca__sub" aria-hidden="true">Apartamentos · Alto Aller</span>
+    </a>
+    <nav class="cab__nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#apartamentos">Apartamentos</a>
+      <a href="#puerto">El puerto</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+    <a class="cab__tel" href="tel:+34669750209"><span class="vh">Teléfono: </span>669 75 02 09</a>
+    <button class="cab__menu" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil"><span class="vh">Menú</span><i></i><i></i></button>
+  </div>
+  <div class="cab__dial" aria-hidden="true"><i class="cab__aguja" id="cab-aguja"></i></div>
+  <div class="menu-movil" id="menu-movil" aria-hidden="true">
+    <nav aria-label="Menú">
+      <a href="#casa"><small>Ultramarinos, La Panera y 2006</small>La casa</a>
+      <a href="#apartamentos"><small>La Panera, El Capitán, El Salao</small>Apartamentos</a>
+      <a href="#puerto"><small>Fuentes de Invierno y San Isidro</small>El puerto</a>
+      <a href="#reservar"><small>Fechas libres y precio</small>Reservar</a>
+      <a href="#llegar"><small>Ctra. General 48, Collanzo</small>Cómo llegar</a>
+    </nav>
+    <p class="menu-movil__tel"><a href="tel:+34669750209">669 75 02 09</a><a href="tel:+34985487417">985 487 417</a></p>
+  </div>
+</header>

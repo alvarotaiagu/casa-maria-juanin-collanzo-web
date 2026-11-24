@@ -1,0 +1,247 @@
+/* Plantas · «Tres plantas, tres historias». Todo bajo [data-modulo="plantas"].
+   Tokens de :root de estilos.css con respaldo, por si la web aún no existe.
+   Sin marcos en las fotos. La tabla «Los tres, de un vistazo» de la sobria la genera la web (construir.mjs), no este módulo. */
+
+[data-modulo="plantas"] {
+  --pl-marfil: var(--marfil, #F1EEE7);
+  --pl-tinta: var(--tinta, #1B1D1F);
+  --pl-galeria: var(--galeria, #2F5D8A);
+  --pl-teja: var(--teja, #A4503A);
+  --pl-noche: var(--noche, #121416);
+  --pl-suave: color-mix(in srgb, var(--pl-tinta) 68%, var(--pl-marfil));
+  --pl-linea: color-mix(in srgb, var(--pl-tinta) 16%, transparent);
+  --pl-cab: var(--alto-cabecera, var(--cab, 72px));
+  --pl-fondo: var(--fondo, var(--marfil, #F1EEE7));
+  --pl-radio: var(--radio, 4px);
+  --pl-lado: var(--lado, clamp(16px, 4vw, 48px));
+  --pl-franja: 84px;
+  --pl-f-tit: var(--f-tit, "Segoe UI", system-ui, -apple-system, sans-serif);
+  --pl-f-txt: var(--f-txt, "Segoe UI", system-ui, -apple-system, sans-serif);
+  --pl-f-mono: var(--f-mono, ui-monospace, "Cascadia Mono", Consolas, monospace);
+  --pl-foco: var(--foco, var(--pl-galeria));
+
+  display: block;
+  color: var(--pl-tinta);
+  font-family: var(--pl-f-txt);
+  padding-block: clamp(24px, 4vw, 56px) clamp(32px, 5vw, 72px);
+}
+[data-modulo="plantas"] *, [data-modulo="plantas"] *::before, [data-modulo="plantas"] *::after { box-sizing: border-box; }
+[data-modulo="plantas"] button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; border-radius: 0; }
+[data-modulo="plantas"] :is(button, a):focus-visible { outline: 2px solid var(--pl-foco); outline-offset: 3px; }
+[data-modulo="plantas"] .pl-nombre:focus { outline: none; }
+[data-modulo="plantas"] :is(ul, ol) { list-style: none; margin: 0; padding: 0; }
+[data-modulo="plantas"] :is(p, h3, h4, figure, dl) { margin: 0; }
+
+/* ===================================================== escena: alzado + fichas */
+[data-modulo="plantas"] .pl-escena {
+  width: min(100%, calc(var(--ancho, 1280px) + 2 * var(--pl-lado))); margin-inline: auto; padding-inline: var(--pl-lado);
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 0;
+}
+[data-modulo="plantas"] .pl-lista { min-width: 0; }
+
+/* alzado a línea */
+[data-modulo="plantas"] .pl-alzado { display: block; width: 100%; height: auto; overflow: visible; }
+[data-modulo="plantas"] .pl-alzado * { vector-effect: non-scaling-stroke; }
+[data-modulo="plantas"] .pl-alzado .pl-a-l,
+[data-modulo="plantas"] .pl-alzado .pl-a-hueco { fill: none; stroke: var(--pl-tinta); stroke-width: 1.4; stroke-linejoin: round; }
+[data-modulo="plantas"] .pl-alzado .pl-a-hueco { fill: var(--pl-marfil); stroke-width: 1.1; }
+[data-modulo="plantas"] .pl-alzado .pl-a-muro { fill: var(--pl-marfil); stroke-width: 1.6; }
+[data-modulo="plantas"] .pl-alzado .pl-a-fino { stroke: var(--pl-tinta); stroke-width: .8; opacity: .5; }
+[data-modulo="plantas"] .pl-alzado .pl-a-ext { opacity: .3; }
+[data-modulo="plantas"] .pl-alzado .pl-a-cota { stroke: var(--pl-tinta); stroke-width: .9; opacity: .65; }
+[data-modulo="plantas"] .pl-alzado .pl-a-dintel { fill: none; stroke: var(--pl-teja); stroke-width: .9; }
+[data-modulo="plantas"] .pl-alzado .pl-a-ladrillo { fill: none; stroke: var(--pl-teja); stroke-width: .9; opacity: .8; }
+[data-modulo="plantas"] .pl-alzado .pl-a-ladrillo-hilada { stroke: var(--pl-teja); stroke-width: .6; opacity: .35; }
+[data-modulo="plantas"] .pl-alzado .pl-a-vidrio { fill: color-mix(in srgb, var(--pl-galeria) 8%, transparent); stroke: var(--pl-galeria); stroke-width: 2; }
+[data-modulo="plantas"] .pl-alzado .pl-a-gl { fill: none; stroke: var(--pl-galeria); stroke-width: 2; }
+[data-modulo="plantas"] .pl-alzado .pl-a-gl-fino { stroke-width: 1.2; }
+[data-modulo="plantas"] .pl-alzado .pl-a-gl-hilo { stroke: var(--pl-galeria); stroke-width: .8; opacity: .55; }
+[data-modulo="plantas"] .pl-alzado .pl-a-hl { fill: var(--pl-galeria); opacity: 0; transition: opacity .35s ease; }
+[data-modulo="plantas"] .pl-alzado .pl-a-hl.is-activa { opacity: .1; }
+[data-modulo="plantas"] .pl-alzado text { font-family: var(--pl-f-mono); font-size: 13px; fill: var(--pl-tinta); }
+[data-modulo="plantas"] .pl-alzado .pl-a-rotulo { font-size: 12px; fill: var(--pl-suave); letter-spacing: .02em; }
+[data-modulo="plantas"] .pl-alzado .pl-a-rotulo--gal { fill: var(--pl-galeria); }
+[data-modulo="plantas"] .pl-alzado .pl-a-nivel { font-size: 15px; fill: var(--pl-suave); transition: fill .25s ease; }
+[data-modulo="plantas"] .pl-alzado .pl-a-nivel.is-activa { fill: var(--pl-galeria); font-weight: 700; }
+[data-modulo="plantas"] .pl-alzado .pl-a-corte { stroke: var(--pl-galeria); stroke-width: 1.5; stroke-dasharray: 10 3 2 3; }
+[data-modulo="plantas"] .pl-alzado .pl-a-muesca { fill: var(--pl-galeria); stroke: none; }
+[data-modulo="plantas"] .pl-alzado .pl-a-hit { fill: transparent; cursor: pointer; }
+[data-modulo="plantas"] .pl-alzado .pl-a-hit:hover { fill: color-mix(in srgb, var(--pl-galeria) 6%, transparent); }
+[data-modulo="plantas"].pl--sin-aguja:not([data-planta]) .pl-a-aguja { opacity: 0; }
+
+/* botonera de plantas */
+[data-modulo="plantas"] .pl-plantas ol { display: flex; flex-direction: column-reverse; }
+[data-modulo="plantas"] .pl-planta-btn {
+  width: 100%; min-height: 52px; display: grid; grid-template-columns: 3.2rem 1fr; align-items: center; gap: 4px;
+  padding: 6px 4px; text-align: left; border-top: 1px solid var(--pl-linea);
+  transition: color .2s ease, background-color .2s ease;
+}
+[data-modulo="plantas"] .pl-plantas li:last-child .pl-planta-btn { border-top: 0; }
+[data-modulo="plantas"] .pl-plantas li:first-child .pl-planta-btn { border-bottom: 1px solid var(--pl-linea); }
+[data-modulo="plantas"] .pl-planta-n { font-family: var(--pl-f-mono); font-size: 1rem; color: var(--pl-suave); }
+[data-modulo="plantas"] .pl-planta-nom { font-family: var(--pl-f-tit); font-weight: 400; font-size: .98rem; letter-spacing: -.01em; }
+[data-modulo="plantas"] .pl-planta-btn[aria-current="true"] .pl-planta-n { color: var(--pl-galeria); font-weight: 700; }
+[data-modulo="plantas"] .pl-planta-btn[aria-current="true"] { background: color-mix(in srgb, var(--pl-galeria) 8%, transparent); }
+@media (hover: hover) { [data-modulo="plantas"] .pl-planta-btn:hover .pl-planta-nom { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; } }
+
+/* ===================================================== ficha de apartamento */
+[data-modulo="plantas"] .pl-ap {
+  container-type: inline-size;
+  padding-block: clamp(44px, 7vw, 96px);
+  border-top: 1px solid var(--pl-linea);
+  scroll-margin-top: calc(var(--pl-cab) + var(--pl-franja) + 12px);
+}
+[data-modulo="plantas"] .pl-ap:first-child { border-top: 0; padding-top: clamp(12px, 2vw, 24px); }
+[data-modulo="plantas"] .pl-planta {
+  display: flex; align-items: center; gap: .8rem;
+  font: 500 .9rem/1 var(--pl-f-mono); color: var(--pl-galeria); letter-spacing: .02em;
+}
+[data-modulo="plantas"] .pl-planta::before { content: ""; width: 2.4rem; height: 2px; background: currentColor; }
+[data-modulo="plantas"] .pl-nombre {
+  margin-top: .9rem;
+  font: 400 clamp(1.7rem, 8vw, 3.4rem)/1.02 var(--pl-f-tit);
+  font-size: clamp(1.7rem, 8.4cqi, 5.2rem);
+  letter-spacing: -.04em; text-wrap: balance;
+}
+[data-modulo="plantas"] .pl-datos { margin-top: clamp(24px, 3.4vw, 44px); display: grid; gap: 28px; }
+[data-modulo="plantas"] .pl-relato { display: grid; gap: 22px; align-content: start; }
+[data-modulo="plantas"] .pl-etq { font: 500 .78rem/1.2 var(--pl-f-mono); color: var(--pl-suave); letter-spacing: .02em; margin-bottom: .45rem; }
+[data-modulo="plantas"] .pl-historia { font-size: clamp(1.1rem, 1.5vw, 1.32rem); line-height: 1.45; max-width: 36ch; text-wrap: pretty; }
+[data-modulo="plantas"] .pl-suyo { font-size: 1rem; line-height: 1.5; max-width: 38ch; padding-left: 14px; border-left: 2px solid var(--pl-galeria); text-wrap: pretty; }
+@container (min-width: 700px) {
+  [data-modulo="plantas"] .pl-datos { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; }
+}
+
+/* cifras en mono */
+[data-modulo="plantas"] .pl-cifras { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--pl-tinta); }
+[data-modulo="plantas"] .pl-cifra { padding: 14px 14px 14px 0; border-bottom: 1px solid var(--pl-linea); display: flex; flex-direction: column; gap: 2px; }
+[data-modulo="plantas"] .pl-cifra:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--pl-linea); }
+[data-modulo="plantas"] .pl-cifra-v { font: 500 clamp(2rem, 4.6cqi, 3rem)/1 var(--pl-f-mono); letter-spacing: -.03em; }
+[data-modulo="plantas"] .pl-cifra-e { font: 500 .82rem/1.25 var(--pl-f-mono); color: var(--pl-suave); }
+[data-modulo="plantas"] .pl-cifra-n { font: 500 .74rem/1.2 var(--pl-f-mono); color: var(--pl-galeria); margin-top: 2px; }
+[data-modulo="plantas"] .pl-cifra--txt { font: 500 .86rem/1.35 var(--pl-f-mono); justify-content: center; min-height: 3.4rem; }
+
+/* botón reservar */
+[data-modulo="plantas"] .pl-reservar {
+  margin-top: 22px; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px;
+  background: var(--pl-tinta); color: var(--pl-marfil); text-decoration: none; white-space: nowrap;
+  font: 600 1rem/1 var(--pl-f-txt); letter-spacing: .01em; border-radius: var(--pl-radio);
+  transition: background-color .2s ease, transform .15s ease;
+}
+[data-modulo="plantas"] .pl-reservar:hover { background: var(--pl-galeria); }
+[data-modulo="plantas"] .pl-reservar:active { transform: translateY(1px); }
+
+/* ===================================================== galería por estancias */
+[data-modulo="plantas"] .pl-galeria { margin-top: clamp(36px, 5vw, 64px); }
+[data-modulo="plantas"] .pl-est { display: flex; flex-wrap: wrap; gap: 0 18px; padding-block: 4px; background: var(--pl-fondo); border-bottom: 1px solid var(--pl-tinta); }
+[data-modulo="plantas"] .pl-chip {
+  min-height: 44px; display: inline-flex; align-items: center; gap: .5rem; padding: 0 2px;
+  font: 500 .86rem/1 var(--pl-f-mono); color: var(--pl-suave); position: relative; transition: color .2s ease;
+}
+[data-modulo="plantas"] .pl-chip::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 3px; background: var(--pl-galeria); transform: scaleX(0); transform-origin: left; transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+[data-modulo="plantas"] .pl-chip.is-activa { color: var(--pl-tinta); }
+[data-modulo="plantas"] .pl-chip.is-activa::after { transform: scaleX(1); }
+[data-modulo="plantas"] .pl-chip-n { font-size: .72rem; color: var(--pl-suave); }
+[data-modulo="plantas"] .pl-fila { padding-top: 28px; scroll-margin-top: calc(var(--pl-cab) + var(--pl-franja) + 16px); }
+[data-modulo="plantas"] .pl-fila-t { font: 500 .8rem/1.2 var(--pl-f-mono); color: var(--pl-suave); margin-bottom: 12px; }
+[data-modulo="plantas"] .pl-fotos { display: grid; gap: 6px; grid-template-columns: 1fr; align-items: start; }
+[data-modulo="plantas"] .pl-fotos[data-n="2"],
+[data-modulo="plantas"] .pl-fotos[data-n="4"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+[data-modulo="plantas"] .pl-fotos[data-n="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+[data-modulo="plantas"] .pl-fig { min-width: 0; }
+[data-modulo="plantas"] .pl-foto { display: block; width: 100%; max-width: calc(var(--w, 800) * 1px); aspect-ratio: 4 / 3; position: relative; background: color-mix(in srgb, var(--pl-tinta) 8%, var(--pl-fondo)); overflow: hidden; border-radius: var(--pl-radio); }
+[data-modulo="plantas"] .pl-foto picture { display: block; width: 100%; height: 100%; }
+[data-modulo="plantas"] .pl-foto img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.16, 1, .3, 1); }
+@media (hover: hover) { [data-modulo="plantas"] .pl-foto:hover img { transform: scale(1.025); } }
+[data-modulo="plantas"] .pl-pie { font: 500 .76rem/1.35 var(--pl-f-mono); color: var(--pl-suave); margin-top: 6px; }
+[data-modulo="plantas"] .pl-pie--lado { margin: 0; padding-top: 6px; max-width: 28ch; }
+
+/* una sola foto: a dos tercios y su pie al lado (tamaño honesto, no a sangre) */
+@media (min-width: 600px) {
+  [data-modulo="plantas"] .pl-fotos[data-n="1"] { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 20px; }
+}
+
+/* ===================================================== modo «sube»: alzado fijo (escritorio) */
+@media (min-width: 900px) {
+  [data-modulo="plantas"] .pl-escena { grid-template-columns: minmax(260px, 370px) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 80px); }
+  [data-modulo="plantas"][data-modo="sube"] .pl-indice { position: sticky; top: calc(var(--pl-cab) + 24px); align-self: start; padding-top: 12px; }
+  [data-modulo="plantas"] .pl-alzado-caja { padding-bottom: 8px; }
+  [data-modulo="plantas"] .pl-est { position: sticky; top: var(--pl-cab); z-index: 3; }
+  [data-modulo="plantas"] .pl-ap, [data-modulo="plantas"] .pl-fila { scroll-margin-top: calc(var(--pl-cab) + 24px); }
+  [data-modulo="plantas"] .pl-fila { scroll-margin-top: calc(var(--pl-cab) + 52px); }
+  [data-modulo="plantas"] .pl-ap:first-child { scroll-margin-top: calc(var(--pl-cab) + 12px); }
+}
+
+/* ===================================================== móvil: sin fijar la casa; el alzado pequeño queda pegado arriba */
+@media (max-width: 899.98px) {
+  [data-modulo="plantas"][data-modo="sube"] .pl-indice {
+    position: sticky; top: var(--pl-cab); z-index: 4;
+    display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 10px;
+    margin-inline: calc(var(--pl-lado) * -1); padding: 8px var(--pl-lado);
+    background: var(--pl-fondo); border-bottom: 1px solid var(--pl-linea);
+  }
+  [data-modulo="plantas"][data-modo="sube"] .pl-alzado text,
+  [data-modulo="plantas"][data-modo="sube"] .pl-alzado .pl-a-cotas,
+  [data-modulo="plantas"][data-modo="sube"] .pl-alzado .pl-a-ancho { display: none; }
+  [data-modulo="plantas"][data-modo="sube"] .pl-plantas ol { flex-direction: row; }
+  [data-modulo="plantas"][data-modo="sube"] .pl-plantas li { flex: 1 1 0; min-width: 0; }
+  [data-modulo="plantas"][data-modo="sube"] .pl-planta-btn,
+  [data-modulo="plantas"][data-modo="sube"] .pl-plantas li:first-child .pl-planta-btn {
+    grid-template-columns: 1fr; justify-items: center; text-align: center; border: 0; border-left: 1px solid var(--pl-linea); min-height: 52px; gap: 0; padding: 4px 2px;
+  }
+  [data-modulo="plantas"][data-modo="sube"] .pl-plantas li:first-child .pl-planta-btn { border-left: 0; }
+  [data-modulo="plantas"][data-modo="sube"] .pl-planta-nom { font-size: .74rem; line-height: 1.1; text-wrap: balance; }
+  [data-modulo="plantas"][data-modo="sube"] .pl-planta-n { font-size: .95rem; }
+  [data-modulo="plantas"] .pl-est { gap: 0 14px; }
+}
+@media (max-width: 599.98px) {
+  [data-modulo="plantas"] .pl-cifra-v { font-size: 1.9rem; }
+}
+
+/* ===================================================== modo «rejilla» (movimiento:false o sobria) */
+[data-modulo="plantas"][data-modo="rejilla"] .pl-indice { display: grid; gap: 8px; margin-bottom: 24px; }
+[data-modulo="plantas"][data-modo="rejilla"] .pl-alzado-caja { max-width: 340px; }
+@media (min-width: 900px) {
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-escena { display: block; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-indice { grid-template-columns: minmax(220px, 340px) minmax(220px, 340px); align-items: center; gap: 48px; margin-bottom: 40px; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-lista { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(24px, 3vw, 48px); align-items: start; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-ap { border-top: 1px solid var(--pl-tinta); padding-top: 28px; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-ap:first-child { border-top: 1px solid var(--pl-tinta); padding-top: 28px; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-datos { grid-template-columns: 1fr; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-nombre { font-size: clamp(1.6rem, 8cqi, 2.8rem); }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-cifra-v { font-size: clamp(1.7rem, 7cqi, 2.4rem); }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-est { position: static; }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-fotos[data-n] { grid-template-columns: minmax(0, 1fr); }
+  [data-modulo="plantas"][data-modo="rejilla"] .pl-pie--lado { max-width: none; }
+}
+[data-modulo="plantas"][data-modo="rejilla"] .pl-ap.is-activa .pl-planta { color: var(--pl-tinta); }
+[data-modulo="plantas"][data-modo="rejilla"] .pl-a-hl, [data-modulo="plantas"][data-modo="rejilla"] .pl-a-nivel, [data-modulo="plantas"][data-modo="rejilla"] .pl-chip::after { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-modulo="plantas"] *, [data-modulo="plantas"] *::before, [data-modulo="plantas"] *::after { transition-duration: .001ms !important; animation: none !important; }
+}
+
+/* ===================================================== visor */
+[data-modulo="plantas"] .pl-visor {
+  position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: rgb(18 20 22 / .96); color: #F1EEE7; overscroll-behavior: contain;
+}
+[data-modulo="plantas"] .pl-visor[open] { display: grid; grid-template-columns: 56px minmax(0, 1fr) 56px; grid-template-rows: minmax(0, 1fr) auto; grid-template-areas: "ant marco sig" ". pie ."; padding: 56px 8px 16px; }
+[data-modulo="plantas"] .pl-visor::backdrop { background: rgb(18 20 22 / .9); }
+[data-modulo="plantas"] .pl-visor-marco { grid-area: marco; display: flex; align-items: center; justify-content: center; min-height: 0; }
+[data-modulo="plantas"] .pl-visor-marco picture { display: block; max-width: 100%; max-height: 100%; }
+[data-modulo="plantas"] .pl-visor-img { display: block; width: auto; height: auto; max-width: min(100%, 800px); max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); }
+[data-modulo="plantas"] .pl-visor-pie { grid-area: pie; display: flex; justify-content: space-between; gap: 16px; padding-top: 14px; font: 500 .82rem/1.35 var(--pl-f-mono); color: #d9d6cf; pointer-events: none; }
+[data-modulo="plantas"] .pl-visor-cuenta { white-space: nowrap; }
+[data-modulo="plantas"] .pl-visor-nav { align-self: center; justify-self: center; width: 52px; height: 72px; font-size: 2.6rem; line-height: 1; color: #F1EEE7; display: grid; place-items: center; }
+[data-modulo="plantas"] .pl-visor-ant { grid-area: ant; }
+[data-modulo="plantas"] .pl-visor-sig { grid-area: sig; }
+[data-modulo="plantas"] .pl-visor-nav:hover { background: rgb(255 255 255 / .08); }
+[data-modulo="plantas"] .pl-visor-cerrar { position: absolute; top: 6px; right: 8px; width: 48px; height: 48px; font-size: 2rem; line-height: 1; color: #F1EEE7; display: grid; place-items: center; }
+[data-modulo="plantas"] .pl-visor-cerrar:hover { background: rgb(255 255 255 / .08); }
+[data-modulo="plantas"] .pl-visor :is(button):focus-visible { outline-color: #F1EEE7; }
+@media (max-width: 599.98px) {
+  [data-modulo="plantas"] .pl-visor[open] { grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr) auto auto; grid-template-areas: "marco marco" "pie pie" "ant sig"; padding: 56px 12px 12px; }
+  [data-modulo="plantas"] .pl-visor-nav { width: 100%; height: 52px; }
+  [data-modulo="plantas"] .pl-visor-img { max-height: calc(100vh - 230px); max-height: calc(100dvh - 230px); }
+}
+html:has([data-modulo="plantas"] .pl-visor[open]) { overflow: hidden; }

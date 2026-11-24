@@ -1,0 +1,52 @@
+<!-- ============ pie (noche): nombre, dirección, teléfonos, registro y legales. Sin firma de agencia.
+     [data-modulo="radio-pie"] es la escala pequeña que se completa (§5 bis): la aguja recorre las cuatro emisoras y las deja
+     encendidas al entrar en pantalla. La pinta Radio; si no está, el pie va sin ella. ============ -->
+<footer class="pie sup-noche" id="pie">
+  <div class="env">
+    <div class="pie__escala" data-modulo="radio-pie" aria-hidden="true"></div>
+    <div class="pie__arriba">
+      <p class="pie__nombre">Casa María Juanín</p>
+      <p class="pie__lema">Tres apartamentos en el antiguo ultramarinos de la familia, en Collanzo.</p>
+      <p><a class="btn btn--luz" href="#reservar" data-reservar>Ver fechas</a></p>
+    </div>
+    <div class="pie__cols">
+      <div>
+        <h2 class="pie__h">Dónde</h2>
+        <p>Ctra. General 48<br>33680 Collanzo (Aller)<br>Asturias</p>
+        <p><a href="#llegar">Cómo llegar</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">Reservas</h2>
+        <p><a href="tel:+34669750209" class="mono">669 75 02 09</a><br><a href="tel:+34985487417" class="mono">985 487 417</a></p>
+      </div>
+      <div>
+        <h2 class="pie__h">La casa</h2>
+        <p>Apartamentos turísticos<br><span class="pie__llaves">2 llaves</span> · Registro <span class="mono">AT0510</span></p>
+      </div>
+      <figure class="pie__logo">
+        <img src="marca/logo-original.png" width="195" height="84" alt="El logo de siempre de la casa: la fachada dibujada y «casa maría juanín» con dos llaves" loading="lazy" decoding="async">
+        <figcaption>Su marca de siempre</figcaption>
+      </figure>
+    </div>
+    <div class="pie__legal">
+      <nav aria-label="Legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="accesibilidad.html">Accesibilidad</a><button type="button" id="abrir-cookies">Preferencias de cookies</button></nav>
+      <p>© <span id="anno">2026</span> Apartamentos Casa María Juanín · Collanzo, Aller</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Sin cookies de análisis ni de publicidad: solo se guarda que has visto este aviso. Las letras vienen de Google Fonts; el mapa de Google solo se carga si lo pides. <a href="cookies.html">Más información</a></p>
+  <div class="cookies__acc">
+    <button class="btn btn--luz" type="button" id="ck-si">Entendido</button>
+    <button class="btn btn--hueco" type="button" id="ck-no">Solo lo necesario</button>
+  </div>
+</div>
+
+<!-- MANDO DE MAQUETA (no viaja al cliente): solo con ?revision -->
+<div class="mando" id="mando" role="group" aria-label="Dos versiones de la misma web" hidden>
+  <span class="mando__eti">Versión</span>
+  <button type="button" data-densidad="sintonia" aria-pressed="true">Sintonía</button>
+  <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+</div>
+<!-- fin del MANDO DE MAQUETA -->
